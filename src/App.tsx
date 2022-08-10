@@ -1,7 +1,10 @@
 import React from "react";
+import { Private } from "./components/auth/Private";
+import { Profile } from "./components/auth/Profile";
 import { Button } from "./components/Button";
 import { Container } from "./components/Container";
 import { ThemeProvider } from "./components/context/themeContext";
+import { List } from "./components/generics/List";
 import { Greet } from "./components/Greet";
 import { Heading } from "./components/Heading";
 import { Input } from "./components/Input";
@@ -26,6 +29,15 @@ function App() {
 
   return (
     <div className="App">
+      <Private Component={Profile} IsLoggedIn={true} />
+      <List
+        items={["first", "second", "three"]}
+        onClick={(i) => console.log(i)}
+      />
+        <List
+        items={[10,20,30]}
+        onClick={(i) => console.log(i)}
+      />
       <ThemeProvider>
         <Counter />
       </ThemeProvider>
