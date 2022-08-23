@@ -11,8 +11,10 @@ import { Input } from "./components/Input";
 import { LoggedIn } from "./components/LoggedIn";
 import { Oscar } from "./components/Oscar";
 import { Person } from "./components/Person";
+import { Random } from "./components/restrictingProps/Random";
 import { Counter } from "./components/state/Counter";
 import { Status } from "./components/Status";
+import Toast from "./components/template-literal/Toast";
 
 function App() {
   const name = {
@@ -29,6 +31,8 @@ function App() {
 
   return (
     <div className="App">
+      <Toast position="center"/>
+      <Random value={10} isPositive/>
       <Private Component={Profile} IsLoggedIn={true} />
       <List
         items={["first", "second", "three"]}
